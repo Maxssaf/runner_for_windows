@@ -26,7 +26,7 @@ rpc="${3:-2000}"
 rpc="--rpc $rpc"
 proxy_interval="1200"
 proxy_interval="-p $proxy_interval"
-
+num_of_copies="${1:-1}"
 
 
 
